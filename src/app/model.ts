@@ -1,7 +1,7 @@
  export interface User{
-     name : String,
-     email: String,
+     name : string,
+     email: string,
      gender :boolean,
-     contact : String
+     mobileNo : string
 
 };

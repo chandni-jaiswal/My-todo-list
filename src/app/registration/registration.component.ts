@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../model';
+import {FormBuilder } from '@angular/forms';
+
 
 @Component({
   selector: 'app-registration',
@@ -8,10 +10,17 @@ import { User } from '../model';
 })
 export class RegistrationComponent implements OnInit {
   user : User;
-  constructor() { }
+  
+  constructor( private formBuilder: FormBuilder) {
+    
+   }
 
   ngOnInit(): void {
   }
+  onSubmit() {
+    if (this.formBuilder) {
+      console.log("Form Submitted!");
+    }
 
-
+}
 }
