@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../model';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {FormBuilder } from '@angular/forms';
 
 
@@ -10,17 +11,25 @@ import {FormBuilder } from '@angular/forms';
 })
 export class RegistrationComponent implements OnInit {
   user : User;
-  
+  genders=['Male','Female'];
+  registerForm: FormGroup;
   constructor( private formBuilder: FormBuilder) {
     
    }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.registerForm= new FormGroup({
+      'name':new FormControl(null, Validators.required),
+      'email':new FormControl(null, [Validators.required, Validators.email]),
+      'gender':new FormControl(null, Validators.required),
+      'mobileNo':new FormControl(null,[Validators.pattern("[0-9]{3}[0-9]{3}[0-9]{4}")])
+
+    });
   }
   onSubmit() {
-    if (this.formBuilder) {
-      console.log("Form Submitted!");
-    }
+    
+      console.log(this.registerForm);
+    
 
 }
 }
