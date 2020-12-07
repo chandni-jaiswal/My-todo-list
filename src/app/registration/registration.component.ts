@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../model';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {FormBuilder } from '@angular/forms';
+
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
+import { User } from '../app.model';
 
 
 @Component({
@@ -10,24 +11,27 @@ import {FormBuilder } from '@angular/forms';
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
-  user : User;
-  genders=['Male','Female'];
+  user: User;
+  genders = ['Male', 'Female'];
   registerForm: FormGroup;
-  constructor( private formBuilder: FormBuilder) {
-    
-   }
+  constructor(private formBuilder: FormBuilder) {
+
+  }
 
   ngOnInit() {
-    this.registerForm= new FormGroup({
-      'name':new FormControl(null, Validators.required),
-      'email':new FormControl(null, [Validators.required, Validators.email]),
-      'gender':new FormControl(null, Validators.required),
-      'mobileNo':new FormControl(null,[Validators.pattern("[0-9]{3}[0-9]{3}[0-9]{4}")])
-
-    });
+    this.registerForm = new FormGroup(
+      {
+        'name': new FormControl(null, Validators.required),
+        'email': new FormControl(null, [Validators.required, Validators.email]),
+        'gender': new FormControl(null, Validators.required),
+        'mobileNo': new FormControl(null, [Validators.pattern("[0-9]{3}[0-9]{3}[0-9]{4}")])
+      }
+    );
   }
   onSubmit() {
-    
-      console.log(this.registerForm.value);
-}
+    if (this.registerForm.valid) {
+      this.user = this.registerForm.value;
+      console.log(this.user);
+    }
+  }
 }
