@@ -5,7 +5,6 @@ import {FormBuilder } from '@angular/forms';
 
 
 @Component({
-  selector: 'app-registration',
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.css']
 })

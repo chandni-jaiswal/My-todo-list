@@ -3,15 +3,19 @@ import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import {RouterModule} from '@angular/router';
+import {Routing} from './Routing/Routing';
 @NgModule({
   declarations: [
     AppComponent,
-    RegistrationComponent,
+    RegistrationComponent,HomeComponent,LoginComponent
   ],
   imports: [
+    RouterModule.forRoot(Routing),
     BrowserModule,
     AppRoutingModule,
     FormsModule,
