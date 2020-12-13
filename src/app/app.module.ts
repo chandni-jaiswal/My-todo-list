@@ -9,6 +9,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import {Routing} from './Routing/Routing';
+import { DbLogger, BaseLogger, ConsoleLogger } from './Utility/User.Logger';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,12 @@ import {Routing} from './Routing/Routing';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    {provide: BaseLogger,
+    useClass: ConsoleLogger},
+    {provide:"1", useClass:DbLogger},
+    {provide:"2", useClass: ConsoleLogger}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

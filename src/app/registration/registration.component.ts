@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, Injector } from '@angular/core';
 import { User } from '../app.model';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {FormBuilder } from '@angular/forms';
-
+import {BaseLogger } from '../Utility/User.Logger' 
 
 @Component({
   templateUrl: './registration.component.html',
@@ -11,10 +11,12 @@ import {FormBuilder } from '@angular/forms';
 export class RegistrationComponent{
    user : User;
    users : User[] =[];
+   Logobj : BaseLogger = null;
   genders=['Male','Female'];
   registerForm: FormGroup;
-  constructor( private formBuilder: FormBuilder) {
-    
+  constructor(_injector:Injector) {
+    this.Logobj=_injector.get("1");
+    this.Logobj.Log();
    }
    ngOnInit() {
        this.registerForm= new FormGroup({
