@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common'
 import { NgModule } from '@angular/core';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {RouterModule} from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { RegistrationComponent } from './registration.component';
-import {RegistrationRouting} from '../Routing/RegistrationRouting'
+import { RegistrationRouting } from '../Routing/RegistrationRouting'
 import { AppRoutingModule } from '../app-routing.module';
 @NgModule({
   declarations: [
@@ -15,7 +15,6 @@ import { AppRoutingModule } from '../app-routing.module';
     BrowserModule,
     CommonModule,
     AppRoutingModule,
-    NgModule,
     FormsModule,
     ReactiveFormsModule
   ],
