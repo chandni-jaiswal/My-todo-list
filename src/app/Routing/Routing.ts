@@ -6,6 +6,6 @@ export const Routing = [
     // {path:'Login', component :LoginComponent},
     // {path:'Registration', component :RegistrationComponent},
      {path:'Login', loadChildren : '../login/app.LoginModule#LoginModule'},
-    {path:'Registration', loadChildren: '../registration/app.RegistrationModule#RegistrationModule'},
+    {path:'Registration', loadChildren: '../registration/registration.module'},
     {path :'',component :HomeComponent}
 ];
