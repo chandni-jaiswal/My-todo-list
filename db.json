@@ -1,0 +1,14 @@
+{
+  "Users": [
+    {
+      "id": 1,
+      "name": "Shiv",
+      "email": "shiv.jaiswa10@gmail.com",
+      "gender": "Male",
+      "mobileNo": "8709555738"
+    },
+    {
+      "id": 2
+    }
+  ]
+}

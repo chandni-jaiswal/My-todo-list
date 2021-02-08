@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import {Routing} from './Routing/Routing';
 import { DbLogger, BaseLogger, ConsoleLogger } from './Utility/User.Logger';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,8 @@ import { DbLogger, BaseLogger, ConsoleLogger } from './Utility/User.Logger';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     {provide: BaseLogger,

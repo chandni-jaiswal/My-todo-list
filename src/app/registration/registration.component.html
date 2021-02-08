@@ -30,14 +30,20 @@
         </div>
     </div> 
 </form> 
-<div *ngIf ="users.length>0"><table >
+<input type="button" value ="send to server" (click)="PosttoServer()">
+<!-- <grid-ui [grid-columns] ="[]" [grid-data]="users" (grid-selected) ="SelectUser($event)"></grid-ui> -->
+
+<grid-ui [grid-columns]="[{'colName':'username'}]" 
+[grid-data]="users" (grid-selected)="SelectUser($event)"></grid-ui>
+
+<!-- <div *ngIf ="users.length>0"><table >
     <tr>
         <td>name</td>
         <td>email</td>
         <td>gender</td>
         <td>mobileNo</td>
     </tr>
-   <!-- users: {{users | json}} -->
+   users: {{users | json}} 
     <tr *ngFor="let u of users">
         <td>{{u.name}}</td>
         <td>{{u.email}}</td>
@@ -45,4 +51,4 @@
         <td>{{u.mobileNo}}</td>
     </tr>
 </table> 
-</div>
+</div> -->
